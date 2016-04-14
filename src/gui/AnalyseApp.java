@@ -68,6 +68,7 @@ public class AnalyseApp extends Application {
 	// primary menu buttons
 	Menu menuFile;
 	Menu menuHelp;
+	MenuItem mnGuide;
 
 	// file menu elements
 	Menu menuOpen;
@@ -268,6 +269,13 @@ public class AnalyseApp extends Application {
 
 		// Help menu initialization & setup
 		menuHelp = new Menu("Help");
+		
+		// Guide menu item initialization & setup
+		mnGuide = new MenuItem("User's Guide...");
+		menuHelp.getItems().add(mnGuide);
+		
+		// Guide menu item event handling
+		mnGuide.setOnAction(e -> HelpWindow.display());
 
 		// add all the submenus to File menu
 		menuFile.getItems().addAll(menuOpen, mnAnalyze, menuDelete);

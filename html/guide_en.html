@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+	<h1>User's Guide</h1>
+	
+	<hr />
+	
+	<h2 id="contents">Contents</h2>
+	
+	<ul class="contents_list">
+		<a href="#intro"><li>Introduction</li></a>
+		<a href="#analyzing"><li>Analyzing a new file</li></a>
+		<a href="#opening"><li>Opening a saved file</li></a>
+		<a href="#graphics"><li>Manipulating the graphics</li></a>
+	</ul>
+
+	
+	<ul class="languages">
+	Language:
+		<a href="guide_en.html"><li>English</li></a> |
+		<a href="guide_fr.html"><li>French</li></a>
+	</ul>
+
+	<hr />
+
+	<h3 id="intro">Introduction</h3>
+	<p>This program aims to display the frequency graphics of up to two files. These files contain the frequency data produced by the analysis of voice recordings, saved as <span class="code">.wav</span> files. Thus, by comparing the graphics qualitatively and quantitatively, one can draw conclusions on the evolution of the voice of a person.</p>
+	<a href="#contents" class="contents_link">Return to the contents</a>
+
+	<hr />
+
+	<h3 id="analyzing">Analyzing a new file</h3>
+	<p>To analyze a new <span class="code">.wav</span> file, go to the top menu and choose <span class="code">File>Analyze...</span>. In the window that opens, fill in the first and last name of the person whose voice was recorded, and choose the <span class="code">.wav</span> file of the voice recording you want to analyze. Finally, click<span class="code">Analyze &amp; Save</span>.</p>
+	<p>If no other files are loaded in the main window, the file you just analyzed will be loaded automatically in one of the available spaces. You can then click the corresponding button and the program will draw the frequency graphic for you (if you are having trouble with this, see <a href="#graphics">"Manipulating the graphics"</a>).</p>
+	<a href="#contents" class="contents_link">Return to the contents</a>
+
+	<hr />
+
+	<h3 id="opening">Opening a saved file</h3>
+	<p>To open a saved file, go to the top menu and choose <span class="code">File>Open</span>, then either <span class="code">File 1...</span> or <span class="code">File 2...</span>, depending on which of the 2 places you want to load the graph in. You will then be presented with a new window, allowing you to choose, firstly, the name of the person whose voice was analyzed, and secondly, the specific file saved under this person's name. Finally, click <span class="code">Done</span>; the file will load itself on the corresponding place. You can then click the corresponding button and the program will draw the frequency graphic for you (if you are having trouble with this, see <a href="#graphics">"Manipulating the graphics"</a>).</p>
+	<a href="#contents" class="contents_link">Return to the contents</a>
+
+	<hr />
+
+	<h3 id="graphics">Manipulating the graphics</h3>
+	<p>There are three basic things you can do with the graphics:</p>
+	<ul>
+		<li>Show a simple graphic</li>
+		<p>To do so, simply click on either one (or <b>both</b>) of the <span class="code">Graph 1</span>, <span class="code">Graph 2</span> buttons.</p>
+
+		<li>Show the difference of two graphics</li>
+		<p>To do so, you must first load <b>two</b> files into the main window (see <a href="#opening">"Opening a saved file"</a>). You then have to simply click on <span class="code">Difference 2-1</span>, and the difference of the two graphics will show up. In this graphic, a positive frequency represents a gain in amplitude on that frequency; a negative one represents a loss in amplitude on that frequency.</p>
+
+		<li>Clear the chart</li>
+		<p>To do so, simply click on <span class="code">Clear</span>; this will empty the chart area.</p>
+	</ul>
+	<a href="#contents" class="contents_link">Return to the contents</a>
+</body>
+
+</html>
