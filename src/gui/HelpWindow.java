@@ -64,8 +64,8 @@ public class HelpWindow {
 		layout.setAlignment(Pos.CENTER);
 
 		// scene initialization & setup
-		WIDTH = 400;
-		HEIGHT = 500;
+		WIDTH = 800;
+		HEIGHT = 400;
 
 		scene = new Scene(layout, WIDTH, HEIGHT);
 		window.setScene(scene);
