@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<meta charset="utf-8">
+</head>
+
+<body>
+	<h1>Guide de l'utilisateur</h1>
+	
+	<hr />
+	
+	<h2 id="contents">Contenu</h2>
+	
+	<ul class="contents_list">
+		<a href="#intro"><li>Introduction</li></a>
+		<a href="#analyzing"><li>Analyse d'un nouveau fichier</li></a>
+		<a href="#opening"><li>Ouverture d’un fichier analysé antérieurement</li></a>
+		<a href="#graphics"><li>Manipulation des graphiques</li></a>
+	</ul>
+
+	
+	<ul class="languages">
+	Langue :
+		<a href="guide_en.html"><li>Anglais</li></a> |
+		<a href="guide_fr.html"><li>Français</li></a>
+	</ul>
+
+	<hr />
+
+	<h3 id="intro">Introduction</h3>
+	<p>Cette application a comme but d'afficher en même temps les données de deux fichiers contenant l'analyse d'enregistrements de voix, de sorte qu'on puisse les comparer. En particulier, ce qui nous intéresse ici, c'est l'évolution de la voix d'un patient, qu'on représente qualitativement et quantitativement en observant les différences entre les deux courbes de fréquence lorsque celles-ci sont superposées, mais aussi en observant leur différence.</p>
+	<a href="#contents" class="contents_link">Retour au contenu</a>
+
+	<hr />
+
+	<h3 id="analyzing">Analyse d'un nouveau fichier</h3>
+	<p>Pour analyser un nouveau fichier <span class="code">.wav</span>, allez au menu <span class="code">File>Analyze...</span>. Dans la fenêtre qui s'ouvre, veuillez remplir le prénom et le nom du patient dont on veut analyser la voix, puis veuillez choisir le fichier <span class="code">.wav</span> contenant l'enregistrement de la voix du patient. Enfin, cliquez sur <span class="code">Analyze &amp; Save</span>.</p>
+	<p>Si la fenêtre principale n'est pas ocuppée par un ou deux fichiers de fréquence, le fichier qu'on vient d'analyser va s'ouvrir automatiquement dans la première place vide. Vous pouvez ainsi cliquer sur le bouton correspondant à ce fichier et l'application vous donnera la représentation graphique du fichier des fréquences (si vous rencontrez des problèmes avec l'affichage des graphiques, consultez <a href="#graphics">"Manipulation des graphiques"</a>).</p>
+	<a href="#contents" class="contents_link">Retour au contenu</a>
+
+	<hr />
+
+	<h3 id="opening">Ouverture d’un fichier analysé antérieurement</h3>
+	<p>Pour ouvrir un fichier analysé antérieurement, allez au menu <span class="code">File>Open</span>, puis choisir soit <span class="code">File 1...</span>, soit <span class="code">File 2...</span>, selon la place où vous souhaitez ouvrir le fichier des fréquences. Dans la fenêtre qui s'ouvre, veuillez choisir, premièrement, le nom du patient, et deuxièmement, le fichier sauvegardé sous le nom du patient que vous avez choisi. Enfin, cliquez sur <span class="code">Done</span> ; le fichier s'ouvrira dans la place que vous avez choisie. Vous pouvez ainsi cliquer sur le bouton correspondant à ce fichier et l'application vous donnera la représentation graphique du fichier des fréquences (si vous rencontrez des problèmes avec l'affichage des graphiques, consultez <a href="#graphics">"Manipulation des graphiques"</a>).</p>
+	<a href="#contents" class="contents_link">Retour au contenu</a>
+
+	<hr />
+
+	<h3 id="graphics">Manipulation des graphiques</h3>
+	<p>Il existe trois fonctions principales :</p>
+	<ul>
+		<li>Affichage simple d'un graphique</li>
+		<p>Cliquer sur l'un des deux (ou sur <b>tous les deux</b>) boutons <span class="code">Graph 1</span>, <span class="code">Graph 2</span>.</p>
+
+		<li>Affichage de la différence des deux graphiques</li>
+		<p>Il est nécessaire d'ouvrir <b>deux</b> fichiers (voir <a href="#opening">"Ouverture d’un fichier analysé antérieurement"</a>). Une fois ouverts, cliquez sur <span class="code">Difference 2-1</span>, et l'application vous donnera la représentation graphique de la différence des deux fichiers. Sur ce graphique, les fréquences positives représentent un gain et les fréquences négatives représentent une perte.</p>
+
+		<li>Vider le tableau</li>
+		<p>Cliquer sur <span class="code">Clear</span> vide le tableau des graphiques.</p>
+	</ul>
+	<a href="#contents" class="contents_link">Retour au contenu</a>
+</body>
+
+</html>

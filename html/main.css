@@ -5,38 +5,30 @@ body {
 
 .code {
 	background-color: #C5C5C6;
-	padding-top: 1px;
+	font-family: 'Courier New';
+	margin-left: 3px;
+	margin-right: 3px;
 	padding-bottom: 1px;
 	padding-left: 3px;
 	padding-right: 3px;
-	margin-right: 3px;
-	margin-left: 3px;
-	font-family: 'Courier New';
+	padding-top: 1px;
 }
 
 .contents_link {
-	padding: 3px;
-	margin: 3px;
-	text-decoration: none;
-	color: navy;
+	margin-left: 8pt;
 }
 
-.contents_link:hover {
-	color: blue;
-	background-color: #BABABA;
-}
-
-p > a, .languages a, .contents_list li {
-	color: #073DD1;
-	text-decoration: none;
+p > a, .languages a, .contents_list li, .contents_link {
 	border-bottom: transparent solid 1px;
 	border-radius: 3px;
+	color: #073DD1;
+	margin-right: 0px;
 	padding-bottom: 0px;
 	padding-right: 0px;
-	margin-right: 0px;
+	text-decoration: none;
 }
 
-p > a:hover, .languages a:hover {
+p > a:hover, .languages a:hover, .contents_link:hover {
 	border-bottom: #073DD1 solid 1px;
 }
 
@@ -46,8 +38,8 @@ p > a:hover, .languages a:hover {
 }
 
 .languages li {
-	list-style-type: none;
 	display: inline-block;
+	list-style-type: none;
 }
 
 .contents_list a {
@@ -64,6 +56,10 @@ p > a:hover, .languages a:hover {
 }
 
 hr {
-	margin-top: 1cm;
 	margin-bottom: 1cm;
+	margin-top: 1cm;
+}
+
+ul > p {
+	margin-left: 20pt;
 }
