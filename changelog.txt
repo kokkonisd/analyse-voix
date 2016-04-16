@@ -1,0 +1,9 @@
+AnalyseVoix changelog
+
+1.1:   April 16, 2016
+    - Fixed unreported bugs.
+    - Added help screen / user's guide.
+    - Improved documentation.
+
+1.0:   April 13, 2016
+    - Initial release.
