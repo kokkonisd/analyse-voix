@@ -3,6 +3,7 @@ package gui;
 import javafx.stage.Stage;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.net.MalformedURLException;
 import java.text.ParseException;
 import analyse.WavDatabase;
 import javafx.application.Application;
@@ -275,7 +276,13 @@ public class AnalyseApp extends Application {
 		menuHelp.getItems().add(mnGuide);
 		
 		// Guide menu item event handling
-		mnGuide.setOnAction(e -> HelpWindow.display());
+		mnGuide.setOnAction(e -> {
+			try{
+				HelpWindow.display();
+			}catch(MalformedURLException x){
+				AlertBox.display("Malformed url.");
+			}
+		});
 
 		// add all the submenus to File menu
 		menuFile.getItems().addAll(menuOpen, mnAnalyze, menuDelete);

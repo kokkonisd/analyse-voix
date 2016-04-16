@@ -4,6 +4,11 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+
+import java.net.MalformedURLException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
@@ -32,6 +37,9 @@ public class HelpWindow {
 
 	// path string variable
 	private static String path;
+	
+	// path variable to turn to a URL
+	private static Path pathToUrl;
 
 	// width & height variables
 	private static int WIDTH;
@@ -39,8 +47,9 @@ public class HelpWindow {
 
 	/**
 	 * method to display the user's guide (in html form)
+	 * @throws MalformedURLException 
 	 */
-	public static void display()
+	public static void display() throws MalformedURLException
 	{
 		// stage initialization & setup
 		window = new Stage();
@@ -55,8 +64,10 @@ public class HelpWindow {
 
 		// getting the path to the project's root folder 
 		path = System.getProperty("user.dir");
+		pathToUrl = Paths.get(path + "/html/guide_en.html");
+		
 		// loading the help page in english
-		guideEngine.load("file://" + path + "/html/guide_en.html"); 
+		guideEngine.load(pathToUrl.toUri().toURL().toString()); 
 
 		// main layout initialization & setup
 		layout = new VBox(20);
