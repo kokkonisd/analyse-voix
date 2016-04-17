@@ -93,7 +93,7 @@ public class AnalyseApp extends Application {
 		
 		// stage initialization & setup
 		window = primaryStage;
-		window.setTitle("Projet PeiP");
+		window.setTitle("AnalyseVoix");
 
 		// create a new WavDatabase object to get data to draw 
 		WavDatabase database = new WavDatabase();
