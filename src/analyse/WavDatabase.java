@@ -15,7 +15,7 @@ import java.util.Scanner;
 import WavFile.WavFileException;
 
 /**
- * Database management class for the Analyse application.
+ * Database management class for the AnalyseVoix application.
  * 
  * Made in January - April 2016, as part of the 
  * project DI14 - Analyse de la voix, in Polytech' Tours.

@@ -18,7 +18,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 /**
- * Main class for the Analyse application.
+ * Main class for the AnalyseVoix application.
  * 
  * Made in January - April 2016, as part of the 
  * project DI14 - Analyse de la voix, in Polytech' Tours.

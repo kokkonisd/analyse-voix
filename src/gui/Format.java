@@ -3,7 +3,7 @@ package gui;
 import java.util.regex.Pattern;
 
 /**
- * Name/file formatting class for the Analyse application.
+ * Name/file formatting class for the AnalyseVoix application.
  * 
  * Made in January - April 2016, as part of the 
  * project DI14 - Analyse de la voix, in Polytech' Tours.
@@ -43,7 +43,7 @@ public class Format {
 	 */
 	public static String fileToReadable(String fileName)
 	{
-		// seperate name, date and time
+		// separate name, date and time
 		String[] t = fileName.split(Pattern.quote("_"));
 
 		// return "SURNAME Name, DD/MM/YYYY, hh:mm:ss"
@@ -65,7 +65,7 @@ public class Format {
 	 */
 	public static String dirToData(String dirName)
 	{
-		// seperate the name and the surname
+		// separate the name and the surname
 		String[] t = dirName.split(Pattern.quote(" "));
 
 		// return "name-surname"
@@ -84,7 +84,7 @@ public class Format {
 	 */
 	public static String fileToData(String fileName)
 	{
-		// seperate name, date and time
+		// separate name, date and time
 		String[] full = fileName.split(Pattern.quote(", "));
 
 		// return "name-surname_DD-MM-YYYY_hh-mm-ss.txt"

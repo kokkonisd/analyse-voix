@@ -10,7 +10,7 @@ import java.io.PrintWriter;
 import java.io.IOException;
 
 /**
- * FFT/wav analysis class for the Analyse application.
+ * FFT/wav analysis class for the AnalyseVoix application.
  * 
  * Made in January - April 2016, as part of the 
  * project DI14 - Analyse de la voix, in Polytech' Tours.

@@ -9,7 +9,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
- * Generic alert box class Analyse application.
+ * Generic alert box class for the AnalyseVoix application.
  * 
  * Made in January - April 2016, as part of the 
  * project DI14 - Analyse de la voix, in Polytech' Tours.
@@ -32,7 +32,7 @@ public class AlertBox {
 	// main layout variable
 	private static VBox layout;
 	
-	// width & height variables
+	// window width & height variables
 	static int WIDTH;
 	static int HEIGHT;
 	

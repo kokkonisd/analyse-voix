@@ -11,7 +11,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
- * Delete subject / entry class for the Analyse application.
+ * Delete subject / entry class for the AnalyseVoix application.
  * 
  * Made in January - April 2016, as part of the 
  * project DI14 - Analyse de la voix, in Polytech' Tours.
@@ -42,12 +42,12 @@ public class DeleteWindow {
 	// a boolean var to check if we should close the window or not
 	private static boolean deleted;
 
-	// these vars exist because I can't access the buttons from 2 child classes deep
 	// variables for intermediary class control
+	// (these vars exist because buttons from 2 child classes deep are not accessible)
 	public static boolean g1out;
 	public static boolean g2out;
 
-	// width & height variables
+	// window width & height variables
 	private static int WIDTH;
 	private static int HEIGHT;
 
@@ -73,17 +73,21 @@ public class DeleteWindow {
 			AlertBox.display("The database is empty. Please analyze something first.");
 			window.close();
 		}else{
-
 			// name list initialization & setup
 			names = new ComboBox<String>();
-			for(String s : OpenWindow.listDirectories()){
-				names.getItems().add(Format.dirToReadable(s));
+			for(String dir_name : OpenWindow.listDirectories()){
+				// add the directory names to the combo box, in readable format
+				names.getItems().add(Format.dirToReadable(dir_name));
 			}
+			// set default value of directory names to the first name
 			names.setValue(Format.dirToReadable(OpenWindow.listDirectories()[0]));
 
 			// delete button initialization & setup
 			btnDelete = new Button("Delete");
 			btnDelete.setOnAction(e -> {
+				/* call AlertDelete and store the result to a boolean variable;
+				 * we're going to use this to determine if the user cancelled out or not
+				 */
 				deleted = AlertDelete.display("database/" + Format.dirToData(names.getValue()), 
 						"subject \"" + names.getValue() + "\"");
 
@@ -165,15 +169,15 @@ public class DeleteWindow {
 			names = new ComboBox<String>();
 			files = new ComboBox<String>();
 			// populate directory list
-			for(String d : OpenWindow.listDirectories()){
-				names.getItems().add(Format.dirToReadable(d));
+			for(String dir_name : OpenWindow.listDirectories()){
+				names.getItems().add(Format.dirToReadable(dir_name));
 			}
 
 			// update file list when the name changes
 			names.setOnAction(e -> {
 				files.getItems().clear();
-				for(String f : OpenWindow.listFiles(Format.dirToData(names.getValue()))){
-					files.getItems().add(Format.fileToReadable(f));
+				for(String file_name : OpenWindow.listFiles(Format.dirToData(names.getValue()))){
+					files.getItems().add(Format.fileToReadable(file_name));
 				}
 				files.setValue(Format.fileToReadable(OpenWindow.listFiles(
 						Format.dirToData(names.getValue()))[0]));
@@ -182,9 +186,9 @@ public class DeleteWindow {
 			// set the default value for the name
 			names.setValue(Format.dirToReadable(OpenWindow.listDirectories()[0]));
 
-			// populate the file list
-			for(String f : OpenWindow.listFiles(Format.dirToData(names.getValue()))){
-				files.getItems().add(Format.fileToReadable(f));
+			// populate the file list (before the directory list is clicked)
+			for(String file_name : OpenWindow.listFiles(Format.dirToData(names.getValue()))){
+				files.getItems().add(Format.fileToReadable(file_name));
 			}
 			// set the default value for the file
 			files.setValue(Format.fileToReadable(OpenWindow.listFiles(
@@ -193,6 +197,9 @@ public class DeleteWindow {
 			// delete button initialization & setup
 			btnDelete = new Button("Delete");
 			btnDelete.setOnAction(e -> {
+				/* call AlertDelete and store the result to a boolean variable;
+				 * we're going to use this to determine if the user cancelled out or not
+				 */
 				deleted = AlertDelete.display("database/" + Format.dirToData(names.getValue()) + "/" +
 						Format.fileToData(files.getValue()), "the entry \"" + files.getValue() + "\"");
 

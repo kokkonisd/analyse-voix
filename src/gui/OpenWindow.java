@@ -14,7 +14,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
- * Open file class for the Analyse application.
+ * Open file class for the AnalyseVoix application.
  * 
  * Made in January - April 2016, as part of the 
  * project DI14 - Analyse de la voix, in Polytech' Tours.
@@ -45,18 +45,17 @@ public class OpenWindow {
 	private static ComboBox<String> namesInDatabase;
 	private static ComboBox<String> filesInDatabase;
 
-	// width & height variables
+	// window width & height variables
 	private static int WIDTH;
 	private static int HEIGHT;
 
 	/**
-	 * method to handle opening of files
+	 * method to handle the opening of files
 	 * 
-	 * @param btn : Button which corresponds to the file opened
+	 * @param btn : Button that corresponds to the file opened
 	 */
 	public static void display(Button btn)
 	{
-
 		// stage initialization & setup
 		window = new Stage();
 		window.setTitle("Open File");
@@ -79,9 +78,9 @@ public class OpenWindow {
 			window.close();
 		}else{
 			// populate the name combo box with directory names
-			for(String d : listDirectories()){
+			for(String dir_name : listDirectories()){
 				// directories get added to the combo box in a readable format
-				namesInDatabase.getItems().add(Format.dirToReadable(d));
+				namesInDatabase.getItems().add(Format.dirToReadable(dir_name));
 			}
 
 			// name combo box action handler - this refreshes the file combo box
@@ -89,9 +88,9 @@ public class OpenWindow {
 				// empty the file combo box
 				filesInDatabase.getItems().clear();
 				// populate the file combo box with file names
-				for(String f : listFiles(Format.dirToData(namesInDatabase.getValue()))){
+				for(String file_name : listFiles(Format.dirToData(namesInDatabase.getValue()))){
 					// files get added to the combo box in a readable format
-					filesInDatabase.getItems().add(Format.fileToReadable(f));
+					filesInDatabase.getItems().add(Format.fileToReadable(file_name));
 				}
 				// set the default value for the file - it's the first element of listFiles
 				filesInDatabase.setValue(Format.fileToReadable(listFiles(

@@ -13,7 +13,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
- * Delete verification/alert box class for the Analyse application.
+ * Delete verification/alert box class for the AnalyseVoix application.
  * 
  * Made in January - April 2016, as part of the 
  * project DI14 - Analyse de la voix, in Polytech' Tours.
@@ -23,14 +23,28 @@ import javafx.stage.Stage;
  */
 public class AlertDelete {
 
+	// stage & scene variables
 	private static Stage window;
 	private static Scene scene;
+	
+	// label variable to display a message
 	private static Label message;
+	
+	// yes & no buttons
 	private static Button btnYes;
 	private static Button btnNo;
+	
+	// container variables
 	private static HBox buttons;
 	private static VBox layout;
+	
+	// deleted variable to determine wether the user
+	// actually deleted something or not
 	private static boolean deleted;
+	
+	// window width & height variables
+	private static int WIDTH;
+	private static int HEIGHT;
 
 	/**
 	 * method to verify the deletion of a subject/entry
@@ -70,9 +84,11 @@ public class AlertDelete {
 					// check to see if we're deleting something we're using on the main app
 					try{
 						if(Objects.equals(AnalyseApp.file1.getPath(), temp.getPath())){
+							// if file 1 is deleted, tell DeleteWindow class to disable button 1
 							DeleteWindow.g1out = true;
 						}
 						if(Objects.equals(AnalyseApp.file2.getPath(), temp.getPath())){
+							// if file 2 is deleted, tell DeleteWindow class to disable button 2
 							DeleteWindow.g2out = true;
 						}
 					}catch(NullPointerException x){
@@ -89,7 +105,7 @@ public class AlertDelete {
 				// delete the (now empty) directory
 				toDelete.delete();
 
-				// if it's a file
+			// if it's a file
 			}else{
 				// get the parent dir of the file
 				File parentDir = new File(toDelete.getParent());
@@ -97,9 +113,11 @@ public class AlertDelete {
 				// turn off buttons if their file is deleted
 				try{
 					if(Objects.equals(AnalyseApp.file1.getPath(), toDelete.getPath())){
+						// if file 1 is deleted, tell DeleteWindow class to disable button 1
 						DeleteWindow.g1out = true;
 					}
 					if(Objects.equals(AnalyseApp.file2.getPath(), toDelete.getPath())){
+						// if file 2 is deleted, tell DeleteWindow class to disable button 2
 						DeleteWindow.g2out = true;
 					}
 				}catch(NullPointerException x){
@@ -131,7 +149,9 @@ public class AlertDelete {
 		// no button initialization & setup
 		btnNo = new Button("No");
 		btnNo.setOnAction(e -> {
+			// close the window
 			window.close();
+			// the user cancelled out
 			deleted = false;
 		});
 
@@ -146,13 +166,13 @@ public class AlertDelete {
 		layout.setAlignment(Pos.CENTER);
 
 		// scene initialization & setup
-		int height = 100;
-		int width = message.getText().length()*6 + 50;
+		WIDTH = message.getText().length()*6 + 50;
+		HEIGHT = 100;
 
-		scene = new Scene(layout, width, height);
+		scene = new Scene(layout, WIDTH, HEIGHT);
 		window.setScene(scene);
-		window.setMinHeight(height);
-		window.setMinWidth(width);
+		window.setMinHeight(HEIGHT);
+		window.setMinWidth(WIDTH);
 		window.showAndWait();
 
 		// clear the graph

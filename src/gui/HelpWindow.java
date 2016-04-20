@@ -14,7 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 
 /**
- * Help / User's Guide displayer class for the Analyse application.
+ * Help / User's Guide displayer class for the AnalyseVoix application.
  * 
  * Made in January - April 2016, as part of the 
  * project DI14 - Analyse de la voix, in Polytech' Tours.
@@ -41,12 +41,12 @@ public class HelpWindow {
 	// path variable to turn to a URL
 	private static Path pathToUrl;
 
-	// width & height variables
+	// window width & height variables
 	private static int WIDTH;
 	private static int HEIGHT;
 
 	/**
-	 * method to display the user's guide (in html form)
+	 * method to display the user's guide (in HTML form)
 	 * @throws MalformedURLException 
 	 */
 	public static void display() throws MalformedURLException
@@ -66,7 +66,7 @@ public class HelpWindow {
 		path = System.getProperty("user.dir");
 		pathToUrl = Paths.get(path + "/html/guide_en.html");
 		
-		// loading the help page in english
+		// loading the help page in English
 		guideEngine.load(pathToUrl.toUri().toURL().toString()); 
 
 		// main layout initialization & setup

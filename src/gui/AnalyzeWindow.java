@@ -18,7 +18,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
- * Analyze window class for the Analyse application.
+ * Analyze window class for the AnalyseVoix application.
  * 
  * Made in January - April 2016, as part of the 
  * project DI14 - Analyse de la voix, in Polytech' Tours.
@@ -76,14 +76,16 @@ public class AnalyzeWindow {
 		// the window is modal (the main app window is non accessible)
 		window.initModality(Modality.APPLICATION_MODAL);
 
-		// first and last name fields, initialization & setup
+		// first and last name fields & labels, initialization & setup
 		messageFirstName = new Label("Please enter the first name of the subject");
 		messageLastName = new Label("Please enter the last name of the subject");
 		name1 = new TextField();
 		name2 = new TextField();
+		// first name container initialization & setup
 		firstName = new VBox(10);
 		firstName.getChildren().addAll(messageFirstName, name1);
 		firstName.setAlignment(Pos.CENTER_LEFT);
+		// last name container initialization & setup
 		lastName = new VBox(10);
 		lastName.getChildren().addAll(messageLastName, name2);
 		lastName.setAlignment(Pos.CENTER_LEFT);
